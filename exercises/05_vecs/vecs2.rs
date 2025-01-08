@@ -4,6 +4,7 @@ fn vec_loop(input: &[i32]) -> Vec<i32> {
     for element in input {
         // TODO: Multiply each element in the `input` slice by 2 and push it to
         // the `output` vector.
+        output.push(element*2);
     }
 
     output
@@ -14,6 +15,9 @@ fn vec_map_example(input: &[i32]) -> Vec<i32> {
     // We map each element of the `input` slice to its value plus 1.
     // If the input is `[1, 2, 3]`, the output is `[2, 3, 4]`.
     input.iter().map(|element| element + 1).collect()
+    // input.iter()：创建一个迭代器，用于遍历 input 切片中的每个元素
+    // .map(|element| element + 1)：对迭代器中的每个元素应用闭包 |element| element + 1，这会将每个元素加 1。
+    // .collect()：将映射后的结果收集到一个新的向量中。
 }
 
 fn vec_map(input: &[i32]) -> Vec<i32> {
@@ -24,7 +28,7 @@ fn vec_map(input: &[i32]) -> Vec<i32> {
     input
         .iter()
         .map(|element| {
-            // ???
+            element*2
         })
         .collect()
 }

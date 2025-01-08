@@ -9,9 +9,9 @@ mod tests {
     #[test]
     fn move_semantics4() {
         let mut x = Vec::new();
-        let y = &mut x;
-        let z = &mut x;
+        let y = &mut x;  // 同一时间只有一个可变引用
         y.push(42);
+        let z = &mut x; // 此时y就不能用了
         z.push(13);
         assert_eq!(x, [42, 13]);
     }

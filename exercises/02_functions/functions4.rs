@@ -8,9 +8,9 @@ fn is_even(num: i64) -> bool {
 }
 
 // TODO: Fix the function signature.
-fn sale_price(price: i64) -> {
+fn sale_price(price: i64) -> i64{
     if is_even(price) {
-        price - 10
+        price - 10 // 如果函数的最后一个表达式没有分号，它会被自动返回
     } else {
         price - 3
     }
